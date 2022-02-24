@@ -5,80 +5,93 @@
 
 
 
+
 class Employee:
 
 
-    def __init__(self, employee_name, id_number, salary, email_address):
-        self.employee_name = employee_name
 
-        self.id_number = id_number
+    def __init__(self, name, ID_number, salary, email):
+
+
+
+        self.name = name
+
+        self.ID_number = ID_number
 
         self.salary = salary
 
-        self.email_address = email_address
+        self.email_address = email
 
 
 
-def make_employee_dict(names_lst, id_lst, salary_lst, email_address_lst):
-
-
-    employees_dict = {}
+def make_employee_dict(list_names, list_ID, list_salary, list_email):
 
 
 
-    for list_index in range(len(names_lst)):
-        # Creating Employee object
-
-        employee = Employee(names_lst[list_index], id_lst[list_index], salary_lst[list_index],
-                            email_address_lst[list_index])
+    employee_dict = {}
 
 
-        employees_dict[id_lst[list_index]] = employee
 
-    # Returning Employee objects
-
-    return employees_dict
+    list_len = len(list_ID)
 
 
-# Main function
+
+    for i in range(list_len):
+
+
+
+        name = list_names[i]
+
+        id_num = list_ID[i]
+
+        salary = list_salary[i]
+
+        email = list_email[i]
+
+
+        employee_dict[id_num] = Employee(name, id_num, salary, email)
+
+
+
+    return employee_dict
+
+
 
 def main():
-    # names
-
-    names = ["Jean","Kat", "Pomona" ]
-
-    # id numbers
-
-    ids = [100, 101, 102]
-
-    # salaries
-
-    salaries = [ 30, 35, 28]
-
-    # email addresses
-
-    emails = [ "Jean@aol.com", "Kat@aol.com", "Pomona@aol.com"]
-
-    # Getting the dictionary of employee objects
-
-    employee_info_dict = make_employee_dict(names, ids, salaries, emails)
-    print("Data of employees:\n")
 
 
 
+    sample_names = ["NAME 1", "NAME 2", "NAME 3", "NAME 4"]
+
+    sample_ids = ["ID1", "ID2", "ID3", "ID4"]
+
+    sample_salaries = [1000, 2000, 3000, 4000]
+
+    sample_emails = ["abc@xyz.com", "xyz@abc.com", "sample@sample.com", "aaa@bbb.com"]
+
+    #Call the function
 
 
 
-    for employee in employee_info_dict:
-        # Getting the Employee object of current employee
+    result = (make_employee_dict(sample_names, sample_ids, sample_salaries, sample_emails))
 
-        emp_obj = employee_info_dict[employee]
 
-        # Printing data of employee
-        print("Name: %s" % emp_obj.employee_name)
-        print("ID: %d" % emp_obj.id_number)
-        print("Salary: %d" % emp_obj.salary)
-        print("Email address: %s\n" % emp_obj.email_address)
+
+    for i in result:
+
+
+
+        print(i+": ")
+
+        print("Name:", result[i].name)
+
+        print("ID NUMBER:", result[i].ID_number)
+
+        print("SALARY:", result[i].salary)
+
+        print("EMAIL:", result[i].email_address)
+
+        print()
 
 
 main()
