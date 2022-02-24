@@ -45,25 +45,26 @@ def make_employee_dict(names_lst, id_lst, salary_lst, email_address_lst):
 def main():
     # names
 
-    names = [ ]
+    names = ["Jean","Kat", "Pomona" ]
 
     # id numbers
 
-    ids = [ ]
+    ids = [100, 101, 102]
 
     # salaries
 
-    salaries = [ ]
+    salaries = [ 30, 35, 28]
 
     # email addresses
 
-    emails = [ ]
+    emails = [ "Jean@aol.com", "Kat@aol.com", "Pomona@aol.com"]
 
     # Getting the dictionary of employee objects
 
     employee_info_dict = make_employee_dict(names, ids, salaries, emails)
+    print("Data of employees:\n")
 
-    
+
 
 
 
